@@ -1,0 +1,151 @@
+{
+  "books": [
+    {
+      "title": "Война и мир",
+      "image": "https://basket-01.wb.ru/vol63/part6374/6374567/images/big/1.jpg",
+      "genre": "Роман-эпопея",
+      "author": "Лев Толстой",
+      "publish_year": "1865",
+      "price": 1239,
+      "available": true,
+      "article": "T1"
+    },
+    {
+      "title": "Анна Каренина",
+      "image": "https://ir.ozone.ru/s3/multimedia-8/c1000/6157162832.jpg",
+      "genre": "Роман",
+      "author": "Лев Толстой",
+      "publish_year": "1877",
+      "price": 721,
+      "available": true,
+      "article": "T2"
+    },
+    {
+      "title": "Гордость и предубеждение",
+      "image": "https://basket-01.wb.ru/vol85/part8507/8507938/images/big/1.jpg",
+      "genre": "Роман",
+      "author": "Джейн Остен",
+      "publish_year": "1865",
+      "price": 330,
+      "available": true,
+      "article": "T3"
+    },
+    {
+      "title": "Дюна",
+      "image": "https://basket-04.wb.ru/vol517/part51766/51766435/images/c516x688/1.jpg",
+      "genre": "Фантастика",
+      "author": "Фрэнк Герберт",
+      "publish_year": "1965",
+      "price": 479,
+      "available": true,
+      "article": "T4"
+    },
+    {
+      "title": "Затерянный мир",
+      "image": "https://basket-04.wb.ru/vol661/part66130/66130512/images/big/1.jpg",
+      "genre": "Фантастика",
+      "author": "Артур Конан Дойл",
+      "publish_year": "1912",
+      "price": 330,
+      "available": false,
+      "article": "T5"
+    },
+    {
+      "title": "Критика чистого разума",
+      "image": "https://img3.labirint.ru/rc/d3e0059470a42e5b7bfbe0f0e50c3113/363x561q80/books59/588461/cover.jpg?1612707978",
+      "genre": "Философия",
+      "author": "Иммануил Кант",
+      "publish_year": "1965",
+      "price": 2100,
+      "available": true,
+      "article": "T6"
+    },
+    {
+      "title": "Иметь или быть?",
+      "image": "https://ir.ozone.ru/s3/multimedia-s/c700/6407935684.jpg",
+      "genre": "Философия",
+      "author": "Эрих Фромм",
+      "publish_year": "1976",
+      "price": 623,
+      "available": false,
+      "article": "T7"
+    },
+    {
+      "title": "Приключение Тома Сойера",
+      "image": "https://basket-01.wb.ru/vol67/part6792/6792986/images/big/1.jpg",
+      "genre": "Приключение",
+      "author": "Марк Твен",
+      "publish_year": "1876",
+      "price": 1700,
+      "available": true,
+      "article": "T8"
+    },
+    {
+      "title": "Эрагон",
+      "image": "https://ir.ozone.ru/s3/multimedia-i/c1000/6309209958.jpg",
+      "genre": "Приключение",
+      "author": "Кристофер Паолини",
+      "publish_year": "2007",
+      "price": 400,
+      "available": true,
+      "article": "T9"
+    },
+    {
+      "title": "Робинзон Крузо",
+      "image": "https://vip-bookpodarki.ru/wp-content/uploads/2022/07/1.jpg",
+      "genre": "Приключение",
+      "author": "Даниель Дефо",
+      "publish_year": "1719",
+      "price": 930,
+      "available": true,
+      "article": "T10"
+    }
+  ],
+  "createdBook": [
+    {
+      "title": "Книга 4",
+      "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
+      "genre": "Хороший",
+      "author": "Питер Пен",
+      "publish_year": "2013",
+      "price": "2120",
+      "id": 1
+    },
+    {
+      "title": "Книга 1",
+      "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
+      "genre": "Жанр",
+      "author": "СЕА",
+      "publish_year": "2022",
+      "price": "1021",
+      "id": 2
+    },
+    {
+      "title": "Книга 2",
+      "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
+      "genre": "Жанр",
+      "author": "СЕА",
+      "publish_year": "2022",
+      "price": "1021",
+      "id": 3
+    },
+    {
+      "title": "Книга 3 DB",
+      "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
+      "genre": "Приключение",
+      "author": "Братья Гримм",
+      "publish_year": "2020",
+      "price": "1010",
+      "id": 4
+    },
+    {
+      "title": "Книга 5",
+      "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
+      "genre": "Прик",
+      "author": "Ломоносов",
+      "publish_year": "2000",
+      "price": "999",
+      "id": 5
+    }
+  ]
+}
