@@ -1,19 +1,21 @@
 <template>
     <div>
-        <h1>Создай свою книгу</h1>
-        <RouterLink :to="{name: 'BooksList'}">
-            <v-btn
-                class="btn-main"
-                variant="outlined"
-            >На главную</v-btn>
-        </RouterLink>
+        <div class="wrapper-title">
+            <h1>Создай свою книгу</h1>
+            <RouterLink :to="{name: 'BooksList'}">
+                <v-btn
+                    class="btn-main"
+                    variant="outlined"
+                >На главную</v-btn>
+            </RouterLink>
+        </div>
+        
 
         <div class="text-center mt-4">
             <v-btn
+                class="create-book"
                 color="blue"
-            >
-            Create Book
-
+            >Create Book
                 <v-dialog
                     v-model="dialog"
                     activator="parent"
@@ -146,5 +148,37 @@ import { mapActions, mapGetters } from 'vuex';
         position: fixed;
         top: 200px;
         right: 70px;
+    }
+    @media screen and (max-width: 1330px) {
+        .wrapper-title h1 {
+            display: none;
+        }
+        .wrapper-title {
+            position: absolute;
+            top: 20%;
+            right: 35px;
+        }
+        .create-book {
+            top: 13%;
+            position: absolute;
+            right: 35px;
+        }
+        .btn-main {
+            position: static;
+            top: 0;
+            right: 0;
+        }
+    }
+    @media screen and (max-width: 876px) {
+        .wrapper-title {
+            position: absolute;
+            top: 20%;
+            right: 20%;
+        }
+        .create-book {
+            top: 26%;
+            position: absolute;
+            right: 20%;
+        }
     }
 </style>

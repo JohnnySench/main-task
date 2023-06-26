@@ -70,7 +70,7 @@ import { mapActions } from 'vuex';
                 await this.SET_EDITING_BOOK(this.book)
                     .then(res => {
                         this.$emit('update:modelValue',false);
-                        location.reload();
+                        location.reload(); 
                     })
                     
                 

@@ -2,60 +2,81 @@
     <div>
         <div class="filters">
             <h2>Фильтры по параметрам</h2>
-            Выберите автора
-            <FilterSelectDBL
-                :categoryFilter="aut"
-                @selected="sortByAuthor"
-                v-model="selectAuthor"
-            />
-            Выберите жанр
-            <FilterSelectDBL
-                :categoryFilter="gen"
-                @selected="sortByGenre"
-                v-model="selectGenre"
-            />
-            Выберите год публикации
-            <FilterSelectDBL
-                :categoryFilter="year"
-                @selected="sortByYear"
-                v-model="selectYear"
-            />
+            <div class="wrapper-filters">
+                <span class="type-sort">Выберите автора</span>
+                <FilterSelectDBL
+                    :categoryFilter="aut"
+                    @selected="sortByAuthor"
+                    v-model="selectAuthor"
+                />
+            </div>
+            <div class="wrapper-filters">
+                <span class="type-sort">Выберите жанр</span>
+                <FilterSelectDBL
+                    :categoryFilter="gen"
+                    @selected="sortByGenre"
+                    v-model="selectGenre"
+                />
+            </div>
+            <div class="wrapper-filters">
+                <span class="type-sort">Выберите год публикации</span>
+                <FilterSelectDBL
+                    class="filter_year"
+                    :categoryFilter="year"
+                    @selected="sortByYear"
+                    v-model="selectYear"
+                />
+            </div>
         </div>
         <div class="sort">
             <div class="sort-by-price">
-                <h2 style="cursor: pointer;" @click="isShowPriceSort = !isShowPriceSort">Сортировка по цене</h2>
+                <h3 style="cursor: pointer;" @click="isShowPriceSort = !isShowPriceSort">Сортировка по цене</h3>
                 <button v-if="isShowPriceSort" type="button" @click="sortByPriceUp">Сначала недорогие</button>
                 <button v-if="isShowPriceSort" type="button" @click="sortByPriceDown">Сначала дорогие</button>
             </div>
     
             <div class="sort-by-year">
-                <h2 style="cursor: pointer;" @click="isShowYearSort = !isShowYearSort">Сортировка по году</h2>
+                <h3 style="cursor: pointer;" @click="isShowYearSort = !isShowYearSort">Сортировка по году</h3>
                 <button v-if="isShowYearSort" type="button" @click="sortByYearUp">Сначала старые</button>
                 <button v-if="isShowYearSort" type="button" @click="sortByYearDown">Сначала новые</button>
             </div>
         </div>
        
+        <div class="actions-btns">
+            <RouterLink :to="{name: 'Busket'}">
+                <v-btn
+                    prepend-icon="mdi-cart"
+                    class="btn-busket"
+                    variant="outlined"
+                >Корзина: {{ BUSKET.length }}</v-btn>
+                <v-btn
+                    prepend-icon="mdi-cart"
+                    class="btn-busket-small"
+                    variant="outlined"
+                ></v-btn>
+            </RouterLink>
+            <RouterLink :to="{name: 'CreateBook'}">
+                <v-btn
+                    prepend-icon="mdi-book-edit"
+                    class="btn-create-book"
+                    variant="outlined"
+                >Создай книгу</v-btn>
+                <v-btn
+                    prepend-icon="mdi-book-edit"
+                    class="btn-create-book-small"
+                    variant="outlined"
+                ></v-btn>
+            </RouterLink>
+        </div>
         
-        <RouterLink :to="{name: 'Busket'}">
-            <v-btn
-                class="btn-busket"
-                variant="outlined"
-            >Корзина: {{ BUSKET.length }}</v-btn>
-        </RouterLink>
-        <RouterLink :to="{name: 'CreateBook'}">
-            <v-btn
-                class="btn-create-book"
-                variant="outlined"
-            >Создай книгу</v-btn>
-        </RouterLink>
         
         <div class="books-list">
             
             <BooksListItem 
                 v-for="book in sortBySearchValue"
-                :book_data="book"
+                :bookData="book"
                 :key="book.article"
-                @addBookToBusket="addToBusket"
+                @onAddBookToBusket="addBookToBusket"
             >
             </BooksListItem>
         </div>
@@ -126,7 +147,7 @@ import { mapGetters, mapActions } from 'vuex';
                 'GET_BOOK_FROM_API',
                 'ADD_TO_BUSKET'
             ]),
-            addToBusket(data) {
+            addBookToBusket(data) {
                 this.ADD_TO_BUSKET(data);
             },
         },
@@ -149,33 +170,43 @@ import { mapGetters, mapActions } from 'vuex';
 </script>
 
 <style scoped>
+    .btn-create-book-small {
+        display: none;
+    }
+    .btn-busket-small {
+        display: none;
+        position: absolute;
+        right: 10px;
+        top: 150px;
+    }
     .books-list {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 20px;
+        grid-gap: 10px;
         align-items: center;
     }
     .filters {
+        overflow: hidden;
         position: fixed;
-        width: 275px;
-        left: 20px;
+        max-width: 205px;
+        left: 10px;
         top: 200px;
         height: 100%;
     }
     .btn-create-book {
         position: fixed;
-        right: 70px;
+        right: 10px;
         top: 200px;
     }
     .btn-busket {
         position: fixed;
-        right: 70px;
+        right: 10px;
         top: 250px;
     }
     .sort {
         position: fixed;
         top: 300px;
-        right: 40px;
+        right: 10px;
         display: flex;
         flex-direction: column;
     }
@@ -187,4 +218,100 @@ import { mapGetters, mapActions } from 'vuex';
         display: flex;
         flex-direction: column;
     }
+    @media screen and (max-width: 1330px){
+        .filters {
+            left: 25%;
+            position: absolute;
+            display: flex;
+            overflow: visible;
+        }
+        .filters h2 {
+            display: none;
+        }
+        .books-list {
+            margin-top: 200px;
+        }
+        .wrapper-filters {
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+        .sort {
+            position: absolute;
+            top: 325px;
+            right: 10%;
+        }
+        .btn-create-book {
+           display: none;
+        }
+        .btn-busket {
+            
+            display: none;
+        }
+        .btn-busket-small {
+            display: block;
+            color: black;
+        }
+        .btn-create-book-small {
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 100px;
+            color: black;
+        }
+    }
+    @media screen and (max-width: 876px) {
+        .filters {
+            left: 10%;
+            position: absolute;
+            display: flex;
+            overflow: visible;
+        }
+        .books-list {
+            margin: 300px auto 0;
+            max-width: 400px;
+            grid-template-columns: 1fr 1fr;
+        }
+        .type-sort {
+            font-size: 12px;
+        }
+        .btn-busket {
+            font-size: 12px;
+        }
+        
+        .btn-busket {
+            display: none;
+        }
+        
+        .btn-create-book {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 560px) {
+        .type-sort {
+            display: none;
+        }
+        .books-list {
+            margin: 150px auto 0;
+            max-width: 400px;
+            grid-template-columns: 1fr 1fr;
+        }
+        .sort {
+            top: 155px;
+        }
+        .btn-busket-small {
+            
+            top: 150px;
+            right: 70%;
+        }
+        .btn-create-book-small {
+            top: 190px;
+            right: 70%;
+        }
+        .sort {
+            font-size: 12px;
+        }
+        
+    }
+       
 </style>

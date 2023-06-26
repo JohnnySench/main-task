@@ -5,20 +5,10 @@ export default {
         state.library = res;
       },
       ADD_BOOK_TO_STATE: (state, book) => {
-        if (state.busket.length) {
-          let repet = false;
-          state.busket.map(item => {
-            if (item.article === book.article) {
-              item.count++;
-              repet = true;
-            }
-          })
-          if (!repet) {
-            state.busket.push({...book, count: 1});
-          }
-        } else {
-          state.busket.push({...book, count: 1});
-        }
+        if (!state.busket.length) return state.busket.push({...book, count: 1});
+        const existedBook = state.busket.find(x => x.article === book.article);
+        if (existedBook) return existedBook.count++;
+        state.busket.push({...book, count: 1});
         
       },
       DELETE_BOOK_FROM_BUSKET: (state, index) => {
@@ -66,11 +56,6 @@ export default {
         state.searchValue = ''
       },
       EDITING_BOOK: (state, book) => {
-        // state.createdBook[book.id] = book;
-        state.createdBook.forEach(item => {
-          if (item.id = book.id) {
-            item = book
-          }
-        })
+        state.createdBook.splice(book.id, 1, book)
       }
 }

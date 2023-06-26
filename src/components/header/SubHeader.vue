@@ -12,6 +12,7 @@
 
         <div class="input">
             <v-text-field
+                class="search-book"
                 v-model="search"
                 variant="outlined"
                 density="comfortable"
@@ -25,10 +26,8 @@
         <div class="search">
             <v-btn
                 @click="searchValue(search)"
-                width="90px"
-                height="48px"
                 color="red"
-                class="ml-2"
+                class="btn ml-1"
             >
                 Поиск
             </v-btn>
@@ -74,10 +73,43 @@ import { mapActions, mapGetters } from 'vuex';
     .search {
         padding-right: 200px;
     }
+    .btn {
+        width: 90px !important;
+        height: 48px !important;
+    }
     .nav {
         display: grid;
         grid-template-columns: .5fr 1fr .5fr;
         align-items: center;
         justify-content: center;
+    }
+    @media screen and (max-width: 876px) {
+        .logo {
+            display: none;
+        }
+        .btn {
+            margin-top: 40px;
+            width: 70px !important;
+            max-height: 38px !important;
+            font-size: 12px;
+        }
+        .input {
+            margin-top: 40px;
+            margin-left: 10px;
+        }
+        .nav {
+            
+            grid-template-columns: 1.5fr .5fr;
+        }
+        
+    }
+    @media screen and (max-width: 560px) {
+        .nav {
+            
+            grid-template-columns: 1.5fr .5fr;
+        }
+        .search {
+            padding-right: 20px;
+        }
     }
 </style>

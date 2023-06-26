@@ -103,49 +103,31 @@
   ],
   "createdBook": [
     {
-      "title": "Книга 4",
+      "title": "КНига 1",
       "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
-      "genre": "Хороший",
-      "author": "Питер Пен",
-      "publish_year": "2013",
-      "price": "2120",
+      "genre": "ПРиключение",
+      "author": "СЕА",
+      "publish_year": "2007",
+      "price": "1000",
       "id": 1
     },
     {
-      "title": "Книга 1",
+      "title": "КНига 2",
       "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
       "genre": "Жанр",
       "author": "СЕА",
-      "publish_year": "2022",
-      "price": "1021",
+      "publish_year": "2011",
+      "price": "10001",
       "id": 2
     },
     {
-      "title": "Книга 2",
+      "title": "Книга 3",
       "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
-      "genre": "Жанр",
-      "author": "СЕА",
-      "publish_year": "2022",
-      "price": "1021",
-      "id": 3
-    },
-    {
-      "title": "Книга 3 DB",
-      "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
-      "genre": "Приключение",
-      "author": "Братья Гримм",
-      "publish_year": "2020",
-      "price": "1010",
-      "id": 4
-    },
-    {
-      "title": "Книга 5",
-      "image": "https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png",
-      "genre": "Прик",
-      "author": "Ломоносов",
+      "genre": "Комедия",
+      "author": "четкий",
       "publish_year": "2000",
       "price": "999",
-      "id": 5
+      "id": 3
     }
   ]
 }
